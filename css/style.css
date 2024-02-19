@@ -1,0 +1,188 @@
+/* primero importamos las fuentes que quereremos en la página */
+@import url('https://fonts.googleapis.com/css2?family=Amita:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* las caracteristicas que queremos que sean universales para todas las paginas las ponemos aqui */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", Arial, Helvetica, "sans-serif";
+}
+
+/* Las propiedades que son comunes y que son sensibles a cambios en el tiempo, las guardamos como variables y asi sólo se cambia una vez al usarlas lo ponemos dentro de un var() */
+:root {
+    --color-back-1: bisque;
+    --width-content: 1200px;
+    --color-emphasis: rgb(172, 97, 4);
+    --font-titles:"Amita", serif; 
+}
+
+/* en todo el html quiero esta propiedad */
+html{
+    scroll-behavior: smooth;
+}
+
+/* todos los div del htm que tengan estas propiedades */
+div{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* ===================== body ================== */
+/* ponemos una imagen de fondo y le decimos que abarque todo el ancho y alto la img */
+body {
+    background-image: url(../img/background.png);
+    background-size: cover;
+}
+/* avisamos que abarque todo el ancho y sin margen */
+.width-content {
+    max-width : var(--width-content);
+    margin: 0 auto;
+}
+
+/* header img:first-of-type {
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& HEADER &&&&&&&&&&&&&&&&&&&&&&&&&&& */
+/* colocamos la primera imagen en un div y le damos propiedades para que se coloque donde queremos */
+header div {
+    position: absolute;
+    z-index: 2;
+    top: 5%;
+    left: 8%;
+}
+
+/* adaptamos el ancho de la imagen que esta en el div con respescto al vw*/
+header div> img {
+    width : 20vw;
+}
+
+/* Adaptamos el ancho de la segunda imagen que ocupe toda la imagen con respecto a al pantalla */
+header > img {
+    width: 100%;
+}
+
+/* En todas las web deebe haber un h1(titulo principal) como en el logo img1 ya esta claro y visualmente no queda bien, lo ponemos igualmente en el html y por css le decimos que sea invisible */
+h1 {
+    display: none;
+}
+
+/* pongo las propiedades de h2 que quiero */
+h2{
+    font-family:var(--font-titles);
+    text-align: center;
+    font-size: 2.5rem;
+    position: relative;
+    top: 60px;
+    margin-bottom: 60px;
+}
+
+/* pongo las propiedades de h2 que quiero */
+h3{
+    font-family: var(--font-titles);
+    text-align: center;
+    font-size: 2rem;
+}
+
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$ MENU $$$$$$$$$$$$$$$$$$$$$$ */
+nav {
+    position: sticky;  /* le digo que siempre este aunque la pagina baje */
+    top: 0;
+    background-color: var(--color-back-1);
+    z-index: 2;
+}
+
+.nav-ul {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 4px solid black;
+    /* border-top: 4px solid black; */
+    padding: 10px;
+}
+
+.nav-ul > li {
+    list-style: none;
+    padding: 10px;
+}
+
+.nav-ul > li:hover {
+    color: white;
+    background-color: var(--color-emphasis);
+    border-radius: 10px;
+} 
+.nav-ul > li > a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.5rem;
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@    MAIN  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+article p{
+    font-size: 18px;
+    text-align: justify;
+}
+
+article{
+    max-width: 50%;
+    padding: 10px;
+    border: 20px solid transparent;
+}
+
+article:hover{
+    border:20px solid var(--color-emphasis);
+}
+
+article img{
+    width: 100%;
+}
+
+#servicios > div > article {
+    max-width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#servicios > div > article > img{
+    width: 25%;
+}
+
+#servicios > div > article > h3{
+    font-size: 1.7rem;
+}
+
+/* %%%%%%%%%%%%%%%%%%%%%%%%%%%  FOOTER  %%%%%%%%%%%%%%%%%%%%%%%%%%% */
+
+footer {
+    background-color: var(--color-back-1);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.footer-div > p {
+    font-family: Amita, serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.footer-div > img {
+    width: 80px;
+}
+
+.footer-div > div > img {
+    height: 32px;
+}
